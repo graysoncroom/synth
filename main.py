@@ -38,6 +38,9 @@ def main():
             # but it's good enough for our purposes
             # in general, assuming the machine uses bytes of 8 bits, for a sample size n:
             # frame data = y * 2^(n*8 - 1)
+            # Also note: in the context of fmt for struct.pack, 'h' means 2 bytes of size
+            # I would guess that the choice of the letter 'h' to represent this comes
+            # down to something like the phrase 'half-word' or something of the sort.
             f.writeframesraw(struct.pack('h', int(y*32767)))
 
 if __name__ == '__main__':
