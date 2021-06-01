@@ -2,7 +2,7 @@
 
 A place to throw my wave related projects this summer.
 
-## Quickstart Process (assuming you have python and pip preinstalled)
+## Quickstart Process (ensure Python 3.9 and Pip are installed)
 
 ### Installation
 
