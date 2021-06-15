@@ -10,10 +10,10 @@ frequency = 440.0 # hertz
 # 1000 * sample_rate = sample_rate in millihertz
 # and duration * sample_rate = number of total samples (b/c time * (1/time) = amount)
 # note: we truncate it to an integer with int(...)
-number_of_samples = int((duration*1000) * (sample_rate / 1000.0))
+number_of_samples = int(duration * sample_rate)
 
 def main():
-    x_sample = [ 2*math.pi*(1/frequency)*t for t in range(number_of_samples) ]
+    x_sample = [ 2*math.pi*frequency*t for t in range(number_of_samples) ]
     y_sample = [ math.sin(x) for x in x_sample ]
 
     #plt.plot(x_sample, y_sample)
