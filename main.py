@@ -1,9 +1,10 @@
 #!/bin/python3
 import matplotlib.pyplot as plt
+import numpy as np
 import math, wave, struct
 
 sample_rate = 44100.0 # hertz (this is CD quality; increase for higher quality, decrease for lower)
-duration = 3.0 # seconds
+duration = 1.0 # seconds
 frequency = 440.0 # hertz
 
 # 1000 * duration    = duration in milliseconds
@@ -13,8 +14,8 @@ frequency = 440.0 # hertz
 number_of_samples = int(duration * sample_rate)
 
 def main():
-    x_sample = [ 2*math.pi*frequency*t for t in range(number_of_samples) ]
-    y_sample = [ math.sin(x) for x in x_sample ]
+    x_sample = [ (t/sample_rate) for t in range(number_of_samples) ]
+    y_sample = [ math.sin(2*math.pi*frequency*x) + np.random.normal(0, 1)) for x in x_sample ]
 
     #plt.plot(x_sample, y_sample)
     #plt.xlabel('Time (t)')
